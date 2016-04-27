@@ -1,4 +1,4 @@
-##PDF Extracter
+##PDF Extractor
 
 ####About
 It extracts the content of a given PDF file and dumps it into an XML file.
