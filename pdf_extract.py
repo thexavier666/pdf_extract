@@ -7,13 +7,18 @@ import pdfquery
 def main():
 	# Number of arguments must be 2
 	# Otherwise error will be thrown
-	if len(sys.argv) < 2:
-		print "Usage : python pdf_extract <file_name>.pdf <output_file>"
-		print "Note  : XML file will be created. No need to put .xml extension in output file name"
+
+	if len(sys.argv) < 3:
+		print "\nUsage : python pdf_extract <file_name>.pdf <output_file>"
+		print "Note  : XML file will be created. No need to put .xml extension in output file name\n"
 
 	else:
-		# Takes the PDF file from command line argument
-		pdf = pdfquery.PDFQuery(sys.argv[1])
+		try:
+			# Takes the PDF file from command line argument
+			pdf = pdfquery.PDFQuery(sys.argv[1])
+		except:
+			print "File doesn't exists in the specified directory!"
+			return 0
 
 		# Loads page 0 into memory
 		# Use pdf.load() to load entire file
